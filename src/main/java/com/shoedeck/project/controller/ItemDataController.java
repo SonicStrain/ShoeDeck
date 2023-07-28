@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class ItemDataController {
 
@@ -30,6 +32,16 @@ public class ItemDataController {
             return new ResponseEntity<>("Success", HttpStatus.OK);
         }catch (Exception e){
             throw e;
+        }
+    }
+
+    @RequestMapping(value = "/homeShoes", method = RequestMethod.GET)
+    public ResponseEntity<?> fetchShoeData(){
+        try {
+            List<ShoeInfoDTO> responseData = itemDataService.fetchHomePageShoes();
+            return new ResponseEntity<>(responseData,HttpStatus.OK);
+        } catch (Exception e){
+            throw new RuntimeException(e);
         }
     }
 }

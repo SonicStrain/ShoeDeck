@@ -16,4 +16,5 @@ public class ShoeInfoDTO implements Serializable {
     private String rating;
     private String price;
     private String imageUrl;
+    private String isHome;
 }

@@ -35,6 +35,8 @@ public class ShoeInfo implements Serializable {
     private String price;
     @Column(name = "url")
     private String imageUrl;
+    @Column(name = "is_for_home")
+    private String forHome;
 
     @Override
     public boolean equals(Object o) {
